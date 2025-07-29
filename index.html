@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Zogo Univers – Coming Soon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zogo Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
       background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
+      font-family: 'Montserrat', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    }
-    h1 {
-      font-size: 3em;
       text-align: center;
+      color: white;
+      backdrop-filter: blur(2px);
+    }
+
+    h1 {
+      font-size: 3rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 25px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
+    }
+
+    h1:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      transform: scale(1.03);
     }
   </style>
 </head>
 <body>
-  <h1>Coming Soon,<br>Zogo on 15 Aug!</h1>
+  <h1>🚀 Coming Soon: Zogo launches 15 August!</h1>
 </body>
 </html>
