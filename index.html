@@ -3,86 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zogo Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <title>Zogo Launch</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      height: 100vh;
       background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      color: white;
-      backdrop-filter: blur(2px);
-      padding: 20px;
+      backdrop-filter: brightness(0.7);
     }
-
     h1 {
-      font-size: 3rem;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 25px 40px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-      margin-bottom: 30px;
+      font-size: 3em;
+      margin: 0 0 20px;
     }
-
     #countdown {
-      font-size: 2rem;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      #countdown {
-        font-size: 1.5rem;
-      }
+      font-size: 2em;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>🚀 Coming Soon: Zogo launches 15 August!</h1>
+  <h1>Coming Soon, Zogo on 15 Aug!</h1>
   <div id="countdown">Loading countdown...</div>
 
   <script>
-    function updateCountdown() {
-      // Target: Aug 15, 4:30 PM US Eastern Time (New York)
-      const targetTime = new Date("2025-08-15T16:30:00-04:00").getTime();
+    const countdownElement = document.getElementById("countdown");
 
-      const now = new Date().getTime();
-      const diff = targetTime - now;
+    function updateCountdown() {
+      const launchDate = new Date("August 15, 2025 16:30:00 GMT-0400"); // New York time (Eastern Daylight)
+      const now = new Date();
+      const diff = launchDate - now;
 
       if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "🎉 Zogo is live!";
+        countdownElement.innerHTML = "We're Live!";
         return;
       }
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-      document.getElementById("countdown").innerHTML =
+      countdownElement.innerHTML =
         `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
-    updateCountdown();
     setInterval(updateCountdown, 1000);
+    updateCountdown(); // run immediately
   </script>
 </body>
 </html>
