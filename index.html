@@ -3,60 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zogo Launch</title>
+  <title>Zogo — Coming Soon</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       color: white;
+      background: url('bg.jpg.jpeg') no-repeat center center fixed;
+      background-size: cover;
       text-align: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      backdrop-filter: brightness(0.7);
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      min-height: 100vh;
     }
     h1 {
       font-size: 3em;
-      margin: 0 0 20px;
+      margin-top: 0;
     }
-    #countdown {
-      font-size: 2em;
-      font-weight: bold;
+    .socials a {
+      margin: 0 15px;
+      color: #fff;
+      font-size: 1.5em;
+      text-decoration: none;
+    }
+    .donate-button {
+      margin-top: 30px;
+    }
+    .contact {
+      margin-top: 50px;
+      font-size: 1em;
     }
   </style>
 </head>
 <body>
-  <h1>Coming Soon, Zogo on 15 Aug!</h1>
-  <div id="countdown">Loading countdown...</div>
+  <div class="container">
+    <h1>Zogo — Coming Soon</h1>
+    <p>Launching 15 August 2025 at 4:30 PM (US Central Time)</p>
 
-  <script>
-    const countdownElement = document.getElementById("countdown");
+    <!-- Countdown (optional, can be added later) -->
 
-    function updateCountdown() {
-      const launchDate = new Date("August 15, 2025 16:30:00 GMT-0400"); // New York time (Eastern Daylight)
-      const now = new Date();
-      const diff = launchDate - now;
+    <div class="socials">
+      <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
+      <a href="https://instagram.com/yourpage" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
+    </div>
 
-      if (diff <= 0) {
-        countdownElement.innerHTML = "We're Live!";
-        return;
-      }
+    <div class="donate-button">
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="your-paypal-email@example.com" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="submit" value="Support Us with PayPal" />
+      </form>
+    </div>
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownElement.innerHTML =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown(); // run immediately
-  </script>
+    <div class="contact">
+      <p>Contact us: <a href="mailto:your@email.com">your@email.com</a></p>
+    </div>
+  </div>
 </body>
 </html>
