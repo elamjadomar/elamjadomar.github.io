@@ -3,65 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zogo — Coming Soon</title>
+  <title>ZOGO Universe</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
-      background: url('bg.jpg.jpeg') no-repeat center center fixed;
-      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
     }
-    .container {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      min-height: 100vh;
-    }
+
     h1 {
-      font-size: 3em;
-      margin-top: 0;
+      font-size: 4rem;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
     }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .socials {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 60px;
+      animation: fadeIn 3.5s ease-in-out;
+    }
+
     .socials a {
-      margin: 0 15px;
-      color: #fff;
-      font-size: 1.5em;
       text-decoration: none;
+      color: white;
+      transition: transform 0.3s;
     }
-    .donate-button {
-      margin-top: 30px;
+
+    .socials a:hover {
+      transform: scale(1.1);
     }
-    .contact {
-      margin-top: 50px;
-      font-size: 1em;
+
+    .socials img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .donation {
+      position: absolute;
+      bottom: 30px;
+      text-align: center;
+    }
+
+    .donation button {
+      background-color: #ffc439;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .donation button:hover {
+      background-color: #f7b825;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Zogo — Coming Soon</h1>
-    <p>Launching 15 August 2025 at 4:30 PM (US Central Time)</p>
 
-    <!-- Countdown (optional, can be added later) -->
+  <h1>ZOGO Universe</h1>
+  <p>COMING SOON</p>
 
-    <div class="socials">
-      <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
-      <a href="https://instagram.com/yourpage" target="_blank">Instagram</a>
-      <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
-    </div>
-
-    <div class="donate-button">
-      <form action="https://www.paypal.com/donate" method="post" target="_blank">
-        <input type="hidden" name="business" value="your-paypal-email@example.com" />
-        <input type="hidden" name="currency_code" value="USD" />
-        <input type="submit" value="Support Us with PayPal" />
-      </form>
-    </div>
-
-    <div class="contact">
-      <p>Contact us: <a href="mailto:your@email.com">your@email.com</a></p>
-    </div>
+  <div class="socials">
+    <a href="https://instagram.com/" target="_blank" title="Instagram">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+    </a>
+    <a href="https://youtube.com/" target="_blank" title="YouTube">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" />
+    </a>
+    <a href="https://facebook.com/" target="_blank" title="Facebook">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+    </a>
   </div>
+
+  <div class="donation">
+    <div>Support us</div>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID_HERE" />
+      <button type="submit">Donate with PayPal</button>
+    </form>
+  </div>
+
 </body>
 </html>
